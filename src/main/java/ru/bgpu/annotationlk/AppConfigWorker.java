@@ -28,7 +28,10 @@ public class AppConfigWorker {
                 reflections.getFieldsAnnotatedWith(AppConfig.class).forEach(
                         field -> {
 
-                            String value = properties.getProperty(field.getName());
+                            String value = properties.getProperty(
+                                    field.getName(),
+                                    field.getAnnotation(AppConfig.class).defValue()
+                            );
                             Object targetValue = null;
 
                             if(field.getType().equals(String.class)) {

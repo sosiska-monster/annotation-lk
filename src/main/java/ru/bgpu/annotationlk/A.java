@@ -8,7 +8,7 @@ public class A {
     @AppConfig
     static public Integer port;
 
-    @AppConfig
+    @AppConfig(defValue="my-name")
     static private String serverName;
 
     @Override
