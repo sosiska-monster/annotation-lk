@@ -3,9 +3,20 @@ package ru.bgpu.annotationlk;
 public class A {
 
     @AppConfig
-    private String host;
+    static private String host;
 
-    public void hello() {
-        System.out.println("!");
+    @AppConfig
+    static public Integer port;
+
+    @AppConfig
+    static private String serverName;
+
+    @Override
+    public String toString() {
+        return "A{" +
+                "host='" + host + '\'' +
+                ", port=" + port +
+                ", name=" + serverName +
+                '}';
     }
 }
